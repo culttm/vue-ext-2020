@@ -1,0 +1,51 @@
+{
+  "name": "__MSG_mainName__",
+  "version": "3.0.0",
+  "description": "__MSG_mainDescription__",
+  "homepage_url": "https://letyshops.com",
+  "update_url": "https://letyshops.com/extensions/yandex/update/update.yandex.xml",
+  "manifest_version": 2,
+  "default_locale": "en",
+  "permissions": [
+    "tabs",
+    "webNavigation",
+    "contextMenus",
+    "webRequest",
+    "storage",
+    "<all_urls>",
+    "notifications",
+    "management",
+    "history",
+    "cookies"
+  ],
+  "web_accessible_resources": [],
+  "content_scripts": [
+    {
+      "all_frames": false,
+      "js": [
+        "content/content.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "chrome_style": true
+  },
+  "browser_action": {
+    "default_title": "",
+    "default_popup": "popup/popup.html"
+  },
+  "icons": {
+    "48": "icons/icon_48.png",
+    "128": "icons/icon_128.png"
+  }
+}
